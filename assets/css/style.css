@@ -1,0 +1,32 @@
+body {
+	background-image:url("../images/background.png");
+}
+
+h1 {
+	font-size: 60px;
+}
+
+p {
+	font-size:20px;
+}
+
+.crystal {
+	height: 180px;
+	width: 180px;
+}
+
+.number {
+	background-color:pink;
+}
+
+.winlose {
+	background-color:teal;
+}
+
+.score {
+	background-color:lavender;
+}
+
+.scorebox {
+	background-color:orange;
+}

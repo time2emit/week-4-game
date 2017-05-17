@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Crystals Collector Game</title>
+	<link rel='stylesheet' type='text/css' href='assets/css/reset.css'>
+	<link rel='stylesheet' type='text/css' href='assets/css/style.css'>
+	<script src='assets/javascript/game.js'></script>
+  	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+</head>
+<body>
+	<div><h1>CrystalCollector!</h1></div><br><br>
+	<div>
+	<p> You will be given a random number at the start of the game.</p>
+	<p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+	<p>You win the game by matching your total score to a random number, you lose the game if your total score goes above the random number </p>
+	<p>The value of each crystal is hidden from you until you click on it.</p>
+	<p>Each time when the game starts, the game will change the values of each crystal</p><br><br>
+	</div>
+	<div class='number'>Target Number</div>
+	<div class='winlose'>Wins/Loses</div><br><br>
+	<div>
+		<img src="assets/images/BlueCrystal.jpg" class='crystal'></img>
+		<img src="assets/images/RedCrystal.jpg" class='crystal'></img>
+		<img src="assets/images/PurpleCrystal.jpg" class='crystal'></img>		
+		<img src="assets/images/RainbowCrystal.jpg" class='crystal'></img>
+	</div>
+	<div class='scorebox'>Your total score is: </div>
+	<div class='score'>Numerical Score</div>
+
+  <script type="text/javascript">
+  // variables
+  	// number to match for a win
+  	var targetNumber = 80;
+  	// sum of user click values
+  	var currentSum = 0;
+  	// times currentSum = targetNumber
+  	var wins = 0;
+  	// times currentSum > targetNumber
+  	var loses = 0;
+  	// crystal value options
+  	var numberOptions = [1, 3, 5, 10];
+
+  // Assign a value to each crysal
+
+    for (var i = 0; i < numberOptions.length; i++) {
+
+
+  </script>
+
+</body>
+</html>
