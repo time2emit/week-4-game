@@ -19,11 +19,11 @@
 	</div>
 	<div class='number'>Target Number</div>
 	<div class='winlose'>Wins/Loses</div><br><br>
-	<div>
-		<img id="blue" src="assets/images/BlueCrystal.jpg" class='crystal'></img>
+	<div id="images">
+		<!-- <img id="blue" src="assets/images/BlueCrystal.jpg" class='crystal'></img>
 		<img id="red" src="assets/images/RedCrystal.jpg" class='crystal'></img>
 		<img id="purple" src="assets/images/PurpleCrystal.jpg" class='crystal'></img>
-		<img id="rainbow" src="assets/images/RainbowCrystal.jpg" class='crystal'></img>
+		<img id="rainbow" src="assets/images/RainbowCrystal.jpg" class='crystal'></img -->
 	</div>
 	<div class='scorebox'>Your total score is: </div>
 	<div class='score'>Numerical Score</div>
@@ -40,6 +40,8 @@
   	var loses = 0;
   	// crystal value options
   	var numberOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    // array of IDs
+    var IDs = ["BlueCrystal.jpg","RedCrystal.jpg","PurpleCrystal.jpg","RainbowCrystal.jpg"];
 
   //Choose a random target number between 19 and 120 and insert random number into appropriate div
 
@@ -47,24 +49,62 @@
   console.log(targetNumber);
   $(".number").text("Target Number: " + targetNumber);
 
+  
+
+  // Assign a random, hidden value to each crysal between 1 and 12
+ 
+   for (var i = 0; i < 4; i++) {
+    var imageCrystal = $("<img>");
+    imageCrystal.addClass("crystal");
+    imageCrystal.attr("src", "assets/images/" + IDs[i]);
+    imageCrystal.attr("data-crystalvalue", numberOptions[Math.round(Math.random()*11)]);
+    $("#images").append(imageCrystal);
+    };
+
+  //Create an on-click event
+
+  $(".crystal").on("click", function() {
+    var crystalAmount = ($(this).attr("data-crystalvalue"));
+    console.log('crystal amount ' + crystalAmount);
+    crystalAmount = parseInt(crystalAmount);
+    console.log('Int of Crystal Amount ' + crystalAmount);
+    currentSum += crystalAmount;
+    console.log(currentSum);
+    if (currentSum === targetNumber){
+      wins++;
+    }
+    else if (currentSum > targetNumber){
+      loses++;
+    }
+
   //Display wins and loses in the appropriate div
   $(".winlose").text("Wins: " + wins + "\n" + "Loses: " + loses);
 
   //Display sum of user click values in appropriate div
   $(".score").text(currentSum);
-
-  // Assign a random, hidden value to each crysal between 1 and 12
-
-  for(var i = 0; i < 4; i++){
-    $('.crystal').attr("data-crystalvalue", Math.round(Math.random(numberOptions)));
-
-  };
-
-var crystalValue = ($(this).attr("data-crystalvalue"));
-    alert(crystalValue);
+  
+  });
 
 
 
+
+
+
+
+
+
+
+
+
+  // $('#blue').attr("data-crystalvalue", numberOptions[(Math.round(Math.random() * numberOptions.length))]);
+  //   alert(blue.crystalvalue);
+
+  // $('#red').attr("data-crystalvalue", Math.round(Math.random(numberOptions)));
+  // $('#purple').attr("data-crystalvalue", Math.round(Math.random(numberOptions)));
+  // $('#rainbow').attr("data-crystalvalue", Math.round(Math.random(numberOptions)));
+
+
+  
 
   </script>
 
