@@ -73,10 +73,15 @@
     if (currentSum === targetNumber){
       wins++;
       currentSum = 0;
+      targetNumber = Math.floor(Math.random()*100);
+      $(".number").text("Target Number: " + targetNumber);
+
     }
     else if (currentSum > targetNumber){
       loses++;
       currentSum = 0;
+      targetNumber = Math.floor(Math.random()*100);
+      $(".number").text("Target Number: " + targetNumber);
     }
 
   //Display wins and loses in the appropriate div
@@ -86,27 +91,6 @@
   $(".score").text(currentSum);
 
   });
-
-
-
-
-
-
-
-
-
-
-
-
-  // $('#blue').attr("data-crystalvalue", numberOptions[(Math.round(Math.random() * numberOptions.length))]);
-  //   alert(blue.crystalvalue);
-
-  // $('#red').attr("data-crystalvalue", Math.round(Math.random(numberOptions)));
-  // $('#purple').attr("data-crystalvalue", Math.round(Math.random(numberOptions)));
-  // $('#rainbow').attr("data-crystalvalue", Math.round(Math.random(numberOptions)));
-
-
-  
 
   </script>
 
