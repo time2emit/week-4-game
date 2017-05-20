@@ -45,7 +45,7 @@
 
   //Choose a random target number between 19 and 120 and insert random number into appropriate div
 
-  targetNumber = Math.floor(Math.random()*100);
+  targetNumber = Math.floor(Math.random()*101) +19;
   console.log(targetNumber);
   $(".number").text("Target Number: " + targetNumber);
 
@@ -73,14 +73,14 @@
     if (currentSum === targetNumber){
       wins++;
       currentSum = 0;
-      targetNumber = Math.floor(Math.random()*100);
+      targetNumber = Math.floor(Math.random()*101) + 19;
       $(".number").text("Target Number: " + targetNumber);
 
     }
     else if (currentSum > targetNumber){
       loses++;
       currentSum = 0;
-      targetNumber = Math.floor(Math.random()*100);
+      targetNumber = Math.floor(Math.random()*101) + 19;
       $(".number").text("Target Number: " + targetNumber);
     }
 
