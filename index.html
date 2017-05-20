@@ -72,9 +72,11 @@
     console.log(currentSum);
     if (currentSum === targetNumber){
       wins++;
+      currentSum = 0;
     }
     else if (currentSum > targetNumber){
       loses++;
+      currentSum = 0;
     }
 
   //Display wins and loses in the appropriate div
@@ -82,7 +84,7 @@
 
   //Display sum of user click values in appropriate div
   $(".score").text(currentSum);
-  
+
   });
 
 
